@@ -1,4 +1,4 @@
-package ru.springbootjpa.spring;
+package ru.springbootjpa.spring.Dto;
 
 
 import lombok.*;
@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 @Builder
 @RequiredArgsConstructor
-public class CustomerDTO {
+public class CustomerDto {
 //    private final long customerId;
     private String fName;
     private String lName;
@@ -17,9 +17,9 @@ public class CustomerDTO {
 //    private final String status;
 //    private final String city;
     @Builder.Default
-    private List<VaccinationDTO> vaccinations = new ArrayList<>();
+    private List<VaccinationDto> vaccinations = new ArrayList<>();
 
-    public CustomerDTO(String fName, String lName, List<VaccinationDTO> vaccinations) {
+    public CustomerDto(String fName, String lName, List<VaccinationDto> vaccinations) {
         this.fName = fName;
         this.lName = lName;
         this.vaccinations = vaccinations;

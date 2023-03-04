@@ -1,9 +1,9 @@
-package ru.springbootjpa.spring;
+package ru.springbootjpa.spring.Entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
+import ru.springbootjpa.spring.Entity.Customer;
 
 @Setter
 @Getter

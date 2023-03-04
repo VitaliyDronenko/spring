@@ -1,6 +1,5 @@
-package ru.springbootjpa.spring;
+package ru.springbootjpa.spring.Entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 

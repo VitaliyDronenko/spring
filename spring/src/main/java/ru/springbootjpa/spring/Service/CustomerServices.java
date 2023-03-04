@@ -1,6 +1,10 @@
-package ru.springbootjpa.spring;
+package ru.springbootjpa.spring.Service;
 
 import org.springframework.stereotype.Service;
+import ru.springbootjpa.spring.Dto.CustomerDto;
+import ru.springbootjpa.spring.Dto.VaccinationDto;
+import ru.springbootjpa.spring.Entity.Customer;
+import ru.springbootjpa.spring.Repository.CustomerRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,16 +18,16 @@ public class CustomerServices {
         this.customerRepository = customerRepository;
     }
 
-    public List<CustomerDTO> getAllCustomer() {
+    public List<CustomerDto> getAllCustomer() {
         List<Customer> customers = new ArrayList<>();
-        List<CustomerDTO> customerDTOS = new ArrayList<>();
+        List<CustomerDto> customerDTOS = new ArrayList<>();
         customers=customerRepository.findAll();
-        List<CustomerDTO> collect = customers.stream()
-                .map(e -> CustomerDTO.builder()
+        List<CustomerDto> collect = customers.stream()
+                .map(e -> CustomerDto.builder()
                         .lName(e.getLName())
                         .fName(e.getFName())
                         .vaccinations(e.getVaccinations()
-                                .stream().map(v-> new VaccinationDTO(v.getType_v()))
+                                .stream().map(v-> new VaccinationDto(v.getType_v()))
                                 .collect(Collectors.toList()))
                         .build())
                 .collect(Collectors.toList());
