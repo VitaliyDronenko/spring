@@ -8,6 +8,7 @@ import ru.springbootjpa.spring.Repository.CustomerRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -33,5 +34,13 @@ public class CustomerServices {
                 .collect(Collectors.toList());
 
         return collect;
+    }
+
+    public Customer newCustomer(Customer customer) {
+        return customerRepository.save(customer);
+    }
+
+    public Optional<Customer> findByCity(String city) {
+        return customerRepository.findCustomerByCity(city);
     }
 }
