@@ -43,4 +43,8 @@ public class CustomerServices {
     public Optional<Customer> findByCity(String city) {
         return customerRepository.findCustomerByCity(city);
     }
+
+    public void deleteCustomer(Long id) {
+        customerRepository.deleteById(id);
+    }
 }
