@@ -29,6 +29,7 @@ public class CustomerController {
         logger.info("Get - customer!");
         return customerServices.getAllCustomer();
     }
+
     @PostMapping("/customer_add")
     Customer newCustomer(@RequestBody Customer customer) {
         logger.info("Post - customer_add");
@@ -39,5 +40,11 @@ public class CustomerController {
     Optional<Customer> findByCity (@PathVariable String city) {
         logger.info("Get - " + city);
         return customerServices.findByCity(city);
+    }
+
+    @DeleteMapping("/customer/{id}")
+    void deleteCustomer(@PathVariable Long id) {
+        logger.info("Delete customer id = " + id);
+        customerServices.deleteCustomer(id);
     }
 }
